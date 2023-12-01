@@ -1,0 +1,1032 @@
+@font-face {
+    font-family: 'Bright-Sunday';
+    src: url('../fonts/Bright Sunday.ttf') format('truetype');
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../img/screens/game_background_1.png');
+    background-size: cover;
+    color: white;
+    font-family: 'Bright-Sunday', Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.iconsLink {
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.iconsLink a {
+    color: red;
+}
+
+
+.z-index {
+    z-index: 80;
+}
+
+
+.d-none {
+    display: none !important;
+}
+
+
+.d-flex {
+    display: flex !important;
+}
+
+
+.justify-content-center {
+    justify-content: center;
+}
+
+
+.align-items-center {
+    align-items: center;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+
+.fullscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.screenOverlay {
+    position: absolute;
+    height: 480px;
+    width: 840px;
+    z-index: 50;
+    border: 8px solid black;
+}
+
+
+.startScreenContainer {
+    z-index: 80;
+}
+
+
+.startScreen {
+    height: 480px;
+    width: 840px;
+    background-image: url('../img/screens/BG.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.endScreen {
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/screens/BG.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.turnSignContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 480px;
+    width: 840px;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.turnSign {
+    height: 200px;
+    width: 200px;
+    z-index: 99;
+}
+
+
+.mushroomImg {
+    height: 400px;
+    width: 840px;
+    object-fit: cover;
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+.fontsContainer {
+    position: absolute;
+    top: 50px;
+    left: 160px;
+    display: flex;
+}
+
+.fontsContainer img {
+    height: 100px;
+    width: 400px;
+    object-fit: contain;
+}
+
+
+.redHatScreenImg {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+
+    bottom: 10px;
+    left: -80px;
+}
+
+
+h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 50px;
+    color: red;
+}
+
+.canvas {
+    background-color: rgb(32, 28, 65);
+    z-index: 1;
+    display: block;
+}
+
+
+.canvasContainer {
+    position: relative;
+    border: 8px solid black;
+}
+
+
+.canvasBtn {
+    position: absolute;
+    z-index: 60;
+    height: 50px;
+    width: 50px;
+}
+
+
+.canvasSoundBtn {
+    top: 16px;
+    right: 10px;
+    z-index: 80;
+}
+
+
+.canvasBreakBtn {
+    top: 16px;
+    right: 70px;
+    z-index: 80;
+}
+
+
+.canvasFullscreenBtn {
+    display: flex;
+    top: 16px;
+    right: 130px;
+    z-index: 80;
+}
+
+
+.canvasJumpBtn {
+    bottom: 16px;
+    left: 50px;
+    height: 80px;
+    width: 80px;
+}
+
+
+.canvasNextBtn {
+    bottom: 16px;
+    right: 50px;
+    height: 70px;
+    width: 70px;
+}
+
+
+.canvasPrewBtn {
+    bottom: 16px;
+    right: 140px;
+    height: 70px;
+    width: 70px;
+}
+
+.arrowsContainer {
+    position: absolute;
+    top: 100;
+    right: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.playBtn {
+    position: absolute;
+    bottom: 45px;
+    right: calc(50% - 50px);
+    height: 100px;
+    width: 100px;
+}
+
+
+.infoBtn {
+    position: absolute;
+    top: 16px;
+    right: 134px;
+    height: 50px;
+    width: 50px;
+}
+
+
+.breakInfoBtn {
+    position: absolute;
+    top: 16px;
+    right: 192px;
+    height: 50px;
+    width: 50px;
+    z-index: 80;
+}
+
+.aboutBtn {
+    position: absolute;
+    top: 16px;
+    right: 74px;
+    height: 50px;
+    width: 50px;
+}
+
+
+.soundBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    height: 50px;
+    width: 50px;
+}
+
+
+.fullscreenBtn {
+    display: flex;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    height: 50px;
+    width: 50px;
+}
+
+
+.btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.eventContainer {
+    position: relative;
+    height: 70%;
+    width: 420px;
+}
+
+
+.endContainerFullscreen {
+    height: 45%;
+}
+
+
+.breakScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 480px;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 80;
+}
+
+
+.breakContainer {
+    position: absolute;
+    top: 40px;
+    left: calc(50% - 210px);
+}
+
+
+.cupOfTeaImg {
+    position: absolute;
+    bottom: 40px;
+    left: calc(50% - 125px);
+    height: 120px;
+    width: 250px;
+}
+
+
+.breakPlayBtn {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 40px);
+    z-index: 88;
+}
+
+
+.gameOverBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 420px;
+}
+
+
+.gameOverFont {
+    position: absolute;
+    top: -38px;
+    left: 0;
+    height: 120px;
+    width: 420px;
+    z-index: 40;
+}
+
+
+.levelFontContainer,
+.breaklevelFontContainer {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    height: 50px;
+    width: 405px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.levelFont {
+    height: 50px;
+    object-fit: contain;
+}
+
+
+.stars {
+    position: absolute;
+    bottom: 110px;
+    left: 135px;
+    height: 40px;
+    width: 150px;
+    object-fit: contain;
+}
+
+
+.mushroomContainer {
+    position: absolute;
+    bottom: 50px;
+    left: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;;
+}
+
+
+.mushrooms {
+    height: 80px;
+    width: 80px;
+}
+
+
+.mushroomCount {
+    color: black;
+    font-size: 24px;
+}
+
+
+.informationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.infoTextContainer {
+    height: 220px;
+    width: 300px;
+    z-index: 85;
+    position: absolute;
+    bottom: -10px;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.carefulContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.carefulContainer span,
+.tipSpan {
+    color: red;
+}
+
+
+.noticeContainer {
+    position: absolute;
+    bottom: -60px;
+    left: 30px;
+    height: 160px;
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.noticeField {
+    position: absolute;
+    bottom: -45px;
+    left: 25px;
+    height: 230px;
+    width: 360px;
+}
+
+
+.breakNoticeField {
+    position: absolute;
+    left: 25px;
+    height: 230px;
+    width: 360px;
+    bottom: -35px;
+}
+
+
+.introductionNoticeField {
+    position: absolute;
+    bottom: -40px;
+    left: 25px;
+    height: 300px;
+    width: 360px;
+}
+
+
+.introductionCloseBtn {
+    position: absolute;
+    top: 45px;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+    z-index: 80;
+}
+
+
+.breakInput {
+    height: 300px;
+    width: 100px;
+    z-index: 99;
+}
+
+
+.breakIntroduction {
+    z-index: 60;
+}
+
+
+.introductionTable {
+    display: flex;
+    gap: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 55px;
+}
+
+
+.introductionStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 99;
+}
+
+
+.introductionStatus img {
+    height: 50px;
+    width: 50px;
+}
+
+
+.introductionField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+
+.introductionLine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+    color: black;
+}
+
+
+.breakIntroBtn {
+    height: 60px;
+    width: 60px;
+    z-index: 70;
+}
+
+
+.restartBtn {
+    height: 60px;
+    width: 60px;
+}
+
+
+.menuBtn {
+    height: 60px;
+    width: 60px;
+}
+
+
+.nextBtn {
+    height: 60px;
+    width: 60px;
+}
+
+
+.popUps {
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    width: 50px;
+    right: calc(50% - 180px);
+    z-index: 99;
+    position: relative;
+    background-color: red;
+}
+
+
+.closeBtn {
+    position: absolute;
+    top: -35px;
+    left: -25px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.infoContainer {
+    z-index: 50;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    height: 180px;
+    width: 320px;
+}
+
+
+.introductionContainer {
+    color: black;
+    font-size: 24px;
+    font-weight: 550;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+}
+
+
+.introductionContainer span,
+div {
+    text-align: center;
+}
+
+
+.arrowKeyImg {
+    height: 30px;
+    width: 30px;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+
+.spaceKey {
+    border: 3px solid black;
+    border-radius: 8px;
+    font-weight: 900;
+    padding: 4px 16px 4px 16px;
+    color: rgb(77, 138, 33);
+}
+
+
+.popUpEvent {
+    height: 150px;
+    width: 480px;
+    object-fit: cover;
+}
+
+
+.fullscreenMode {
+    height: 80vh !important;
+    width: 80% !important;
+}
+
+
+.canvasFullscreen {
+    width: 100% !important;
+    height: 80vh !important;
+}
+
+
+.mushroomImgFullscreen {
+    width: 100% !important;
+    height: 80vh !important;
+    bottom: 0 !important;
+    top: unset !important;
+}
+
+
+
+
+/* Smartphones ----------------- */
+@media only screen and (max-width: 1000px) {
+    .canvasContainer,
+    canvas,
+    .screenOverlay,
+    .startScreen,
+    .mushroomImg,
+    .breakScreen {
+        width: 100% !important;
+    }
+    .breakScreen {
+        height: 100%;
+    }
+
+    .breakContainer {
+        top: 40px;
+        height: 330px;
+    }
+    .cupOfTeaImg {
+        height: 80px;
+        width: 250px;
+        bottom: 40px;
+    }
+    .screenOverlay,
+    .canvasContainer {
+        border: none !important;
+    }
+    .canvasFullscreenBtn,
+    .fullscreenBtn {
+        display: none !important;
+    }
+}
+
+
+@media(max-width: 800px) {
+    .cupOfTeaImg {
+        height: 80px;
+        width: 250px;
+    }
+}
+
+
+@media(max-width: 780px) {
+    .introductionNoticeField {
+        height: 300px;
+        width: 360px;
+        bottom: -50px;
+    }
+    .breakNoticeField {
+        height: 200px;
+        width: 360px;
+        bottom: -60px;
+    }
+    .breakIntroBtn {
+        height: 50px;
+        width: 50px;
+    }
+    .gameOverFont {
+        top: -10pxpx;
+    }
+    .cupOfTeaImg {
+        height: 80px;
+        width: 250px;
+        bottom: 10px;
+    }
+    .breakPlayBtn {
+        bottom: -90px;
+    }
+    .breakContainer {
+        top: 30px;
+        height: 280px;
+    }
+    .gameOverBg {
+        height: 380px;
+    }
+
+}
+
+
+@media(max-width: 725px) {
+    .introductionNoticeField {
+        height: 280px;
+        width: 360px;
+        bottom: -30px;
+    }
+    .introductionField {
+        bottom: 65px;
+    }
+    .gameOverFont {
+        height: 100px;
+    }
+}
+
+
+@media(max-width: 660px) {
+    .turnSignContainer {
+        display: flex !important;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .screenOverlay,
+    .startScreenContainer {
+        display: none;
+    }
+    
+}
+
+
+@media(max-width: 660px) {
+
+    .redHatScreenImg {
+        width: 250px;
+        height: 250px;
+    }
+
+    .fontsContainer {
+        top: 90px;
+        left: 50px;
+    }
+
+    .fontsContainer img {
+        height: 100px;
+        width: 400px;
+    }
+    .canvasContainer {
+        display: none;
+    }
+}
+
+
+@media(max-width: 470px) {
+
+    .eventContainer,
+    .gameOverBg,
+    .breakContainer {
+        width: 370px;
+    }
+
+    .gameOverFont {
+        height: 120px;
+        width: 370px;
+    }
+
+    .levelFontContainer {
+        height: 50px;
+        width: 360px;
+    }
+
+    .stars {
+        left: 120px;
+    }
+
+    .noticeField {
+        height: 250px;
+        width: 300px;
+    }
+
+    .fontsContainer img {
+        height: 70px;
+        width: 250px;
+    }
+}
+
+
+/* Smartphones ----------------- */
+@media only screen and (max-height: 480px) {
+
+    canvas,
+    .canvasContainer,
+    .screenOverlay,
+    .startScreen,
+    .mushroomImg {
+        height: 100vh !important;
+        width: 100%;
+    }
+    .screenOverlay,
+    .canvasContainer {
+        border: none !important;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .eventContainer,
+    .gameOverBg,
+    .breakContainer {
+        height: 85vh !important;
+
+    }
+
+    .gameOverFont {
+        height: 120px;
+    }
+
+    .levelFont {
+        height: 50px;
+    }
+
+    .noticeField {
+        height: 210px;
+        bottom: 20px;
+    }
+
+    .noticeContainer {
+        height: 60px;
+
+        align-items: end;
+        bottom: 65px;
+    }
+
+    .fontsContainer img {
+        height: 120px;
+        width: 350px;
+    }
+
+    .screenOverlay,
+    .canvasFullscreenBtn,
+    .fullscreenBtn {
+        border: none !important;
+    }
+    .redHatScreenImg {
+        width: 230px;
+        height: 230px;
+        left: -60px;
+    }
+    .stars {
+        bottom: 170px;
+    }
+    .mushroomContainer {
+        bottom: 100px;
+    }
+
+    .introductionNoticeField,
+    .breakNoticeField {
+        width: 360px;
+        bottom: 30px;
+    }
+    .breakNoticeField {
+        height: 200px;
+    }
+    .cupOfTeaImg {
+        height: 80px;
+        width: 250px;
+        bottom: 40px;
+        bottom: 100px;
+    }
+    .breakPlayBtn {
+        bottom: 10px;
+    }
+    .canvasNextBtn,
+    .canvasPrewBtn,
+    .canvasJumpBtn {
+        display: flex !important;
+    }
+    .introductionTable {
+        bottom: 80px;
+    }
+    .infoTextContainer {
+        bottom: 50px;
+    }
+}
+
+
+@media only screen and (max-height: 430px) {
+    .breaklevelFontContainer {
+        top: 50px;
+    }
+    .levelFont {
+        height: 40px;
+    }
+    .levelFontContainer {
+        top: 60px;
+    }
+
+    .gameOverFont {
+        height: 100px;
+    }
+    .breakIntroBtn {
+        height: 50px;
+        width: 50px;
+    }
+    .noticeField {
+        bottom: 30px;
+    }
+}
+
+
+@media only screen and (max-height: 390px) {
+    .cupOfTeaImg {
+        height: 70px;
+        bottom: 90px;
+    }
+    .breaklevelFontContainer {
+        top: 45px;
+    }
+    .levelFontContainer {
+        display: none;
+    }
+    .noticeField {
+        height: 230px;
+    }
+    .breakNoticeField {
+        height: 160px;
+    }
+    .introductionNoticeField {
+        height: 280px;
+        bottom: 10px;
+    }
+    .introductionField {
+        bottom: 75px;
+    }
+    .breakIntroBtn {
+        height: 40px;
+        width: 40px;
+    }
+    .infoTextContainer {
+        bottom: 5px;
+        font-size: 18px;
+    }
+}
+
+
+@media only screen and (max-height: 350px) {
+    .introductionNoticeField {
+        height: 240px;
+        bottom: 20px;
+    }
+    .introductionTable {
+        bottom: 60px;
+    }
+    .infoTextContainer {
+        bottom: 0px;
+        font-size: 18px;
+    }
+}

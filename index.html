@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./models/drawable-object.class.js" defer></script>
+    <script src="./models/movable-object.class.js" defer></script>
+    <script src="./models/block-object.class.js" defer></script>
+    <script src="./models/background-class.js" defer></script>
+
+    <script src="./js/variables.js" defer></script>
+    <script src="./models/status-bar.class.js" defer></script>
+    <script src="./models/keyboard.class.js" defer></script>
+    <script src="./models/screens-class.js" defer></script>
+
+    <script src="./models/coin-class.js" defer></script>
+    <script src="./models/orc.class.js" defer></script>
+    <script src="./models/goblin.class.js" defer></script>
+    <script src="./models/world.class.js" defer></script>
+    <script src="./models/level.class.js" defer></script>
+    <script src="./levels/level1.js" defer></script>
+    <script src="./levels/level2.js" defer></script>
+    <script src="./levels/level3.js" defer></script>
+    <script src="./models/character.class.js" defer></script>
+
+
+    <script src="./js/main.js" defer></script>
+    <script src="./js/template.js" defer></script>
+    <script src="./js/showAndHide.js" defer></script>
+    <title>Red Hat Run</title>
+</head>
+<body onload="init()">
+    <section class="fullscreen " id="fullscreen">
+        <div class="turnSignContainer d-none" id="turnSignContainer">
+            <img class="turnSign" id="turnSign" src="./img/screens/icons/turnScreenImg.png" alt="">
+        </div>
+        <div class="canvasContainer d-none" id="canvasContainer">
+            <canvas class="canvas " id="canvas" width="840px" height="480px"></canvas>
+
+            <div class="breakScreen d-none" id="breakScreen"></div>
+
+            <img class="canvasSoundBtn btn canvasBtn" id="canvasSoundBtn" onclick="regulateSound('canvasSoundBtn')" src="./img/screens/btn/sound.png" alt=""> 
+            <img class="canvasBreakBtn canvasBtn btn d-none" id="breakIntroductionBtn" onclick="showIntroductions()" src="./img/screens/btn/leader.png" alt="">
+            <img class="canvasBreakBtn btn canvasBtn" id="canvasBreakBtn" onclick="setBreak()" src="./img/screens/btn/pause.png" alt=""> 
+            <img class="canvasFullscreenBtn btn canvasBtn" id="cancasFullscreenBtn" onclick="fullscreen()" src="./img/screens/btn/fullscreen.png" alt=""> 
+            <img class="canvasFullscreenBtn btn canvasBtn d-none" id="cancasExitFullscreenBtn" onclick="exitFullscreenRegulation()" src="./img/screens/btn/exitFullscreenBtn.png" alt=""> 
+            <img class="canvasNextBtn btn canvasBtn d-none" id="canvasNextBtn"  src="./img/screens/btn/next.png" alt=""> 
+            <img class="canvasPrewBtn btn canvasBtn d-none" id="canvasPrewBtn" src="./img/screens/btn/prew.png" alt=""> 
+            <img class="canvasJumpBtn btn canvasBtn d-none" id="canvasJumpBtn" src="./img/screens/btn/upgrade.png" alt=""> 
+        </div>
+
+
+        <div class="startScreenContainer screenOverlay" id="startScreenContainer">
+            <div class="startScreen" id="startScreen">
+                <img class="mushroomImg" id="mushroomImg" src="./img/screens/mushroom.png" alt="">
+                <img class="redHatScreenImg" src="./img/redHat/Run (2).png" alt="">
+                            
+                <div class="fontsContainer">
+                    <img src="./img/screens/fontImg.png" alt="">
+                </div>
+                <img onclick="startGame()" class="playBtn btn" src="./img/screens/btn/play.png" alt="">
+                <img onclick="showGameInfos()" class="infoBtn btn" src="./img/screens/btn/faq.png" alt="">  
+                <img onclick="showAndHideIntroduction()" class="aboutBtn btn" src="./img/screens/btn/leader.png" alt="">   
+                <img class="soundBtn btn" id="soundBtn" onclick="regulateSound('soundBtn')" src="./img/screens/btn/sound.png" alt="">  
+                <img class="fullscreenBtn btn" id="fullscreenBtn" onclick="fullscreen()" src="./img/screens/btn/fullscreen.png" alt="">  
+                <img class="fullscreenBtn btn d-none" id="exitFullscreenBtn" onclick="exitFullscreenRegulation()" src="./img/screens/btn/exitFullscreenBtn.png" alt="">  
+
+                <div class="eventContainer breakContainer d-none" id="introduction"></div>
+                <div class="eventContainer breakContainer d-none" id="gameInformation"></div>
+            </div>
+        </div>
+
+        <div class="screenOverlay" id="screenOverlay">
+            <div class="endScreen d-flex justify-content-center align-items-center" id="endScreen">
+                <div class="eventContainer" id="endCardContainer">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
